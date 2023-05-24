@@ -1,2 +1,19 @@
-# obsidian-auto-nested-list-styles
- This plugin automatically formats the styles of ordered lists, incrementing the list style for each layer.
+# Ordered List Style
+
+This is a plugin for [Obsidian](https://obsidian.md).
+
+When viewing ordered lists in read mode, they will automatically shift styles with level of indent. The styles can go 9 levels deep before repeating.
+
+- decimal
+- lower-alpha
+- lower-roman
+- upper-alpha
+- upper-roman
+- decimal-leading-zero
+- disc
+- circle
+- square
+
+## Upgrade Paths
+
+I would like to add a settings page that allows users to customize their list styles, using any of the [CSS list style types](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type) available, but I haven't gotten that to work properly yet.
