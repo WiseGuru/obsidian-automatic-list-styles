@@ -1,7 +1,7 @@
 {
-	"name": "list-style",
+	"name": "automatic-list-styles",
 	"version": "0.1.0",
-	"description": "Set ordered list style inline in Obsidian.md. Alphabetic lists, roman numeral lists, etc.",
+	"description": "Automatically formats the styles of ordered lists, incrementing the list style for each layer",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
