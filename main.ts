@@ -17,7 +17,7 @@ export default class AutoListStylesPlugin extends Plugin {
   
 }
 
-// Retreived the first text node within a given DOM node. 
+// Retreive the first text node within a given DOM node. 
 function getFirstTextNode(node: Node): ChildNode | null {
   if (node == null)
     return null;
@@ -48,6 +48,7 @@ function getIndentLevel(list: HTMLElement): number {
   return indentLevel;
 }
 
+// iterate through the following list of styles, cycling back to the top after reaching the bottom.
 // additional list styles can be found at https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type
 function getListStyleType(indentLevel: number): string {
   const defaultStyles = [
@@ -64,3 +65,4 @@ function getListStyleType(indentLevel: number): string {
   const defaultStyleIndex = indentLevel % defaultStyles.length;
   return defaultStyles[defaultStyleIndex];
 }
+
