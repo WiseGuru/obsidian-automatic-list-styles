@@ -14,6 +14,8 @@ When viewing ordered lists in read mode, they will automatically shift styles wi
 - circle
 - square
 
+Please note this does not impact edit mode, just read mode.
+
 ## Upgrade Path
 
 I would like to add a settings page that allows users to customize their list styles, using any of the [CSS list style types](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type) available, but I haven't gotten that to work properly yet.
