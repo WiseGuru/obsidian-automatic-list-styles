@@ -1,6 +1,6 @@
 {
 	"name": "automatic-list-styles",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Automatically formats the styles of ordered lists, incrementing the list style for each layer",
 	"main": "main.js",
 	"scripts": {
@@ -12,13 +12,9 @@
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/node": "^16.11.6",
-		"@typescript-eslint/eslint-plugin": "5.29.0",
-		"@typescript-eslint/parser": "5.29.0",
 		"builtin-modules": "3.3.0",
 		"esbuild": "0.14.47",
 		"obsidian": "latest",
-		"tslib": "2.4.0",
 		"typescript": "4.7.4"
 	}
 }
