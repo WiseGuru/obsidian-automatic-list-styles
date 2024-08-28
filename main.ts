@@ -4,7 +4,12 @@ export default class AutoListStylesPlugin extends Plugin {
   async onload() {
     this.registerMarkdownPostProcessor((el) => {
       el.querySelectorAll("ol").forEach((list) => {
-        const firstText = getFirstTextNode(list.querySelector("li"));
+        const firstLi = list.querySelector("li");
+        if (!firstLi) {
+          return;  // Handle the case where no <li> is found.
+        }
+
+        const firstText = getFirstTextNode(firstLi);
         if (firstText && firstText.textContent) {
           const indentLevel = getIndentLevel(list);
           const listStyleType = getListStyleType(indentLevel);
@@ -14,8 +19,8 @@ export default class AutoListStylesPlugin extends Plugin {
       });
     });
   }
-  
 }
+
 
 // Retreive the first text node within a given DOM node. 
 function getFirstTextNode(node: Node): ChildNode | null {
