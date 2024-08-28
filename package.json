@@ -1,6 +1,6 @@
 {
 	"name": "automatic-list-styles",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Automatically formats the styles of ordered lists, incrementing the list style for each layer",
 	"main": "main.js",
 	"scripts": {
