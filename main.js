@@ -33,15 +33,14 @@ var AutoListStylesPlugin = class extends import_obsidian.Plugin {
     this.registerMarkdownPostProcessor((el) => {
       el.querySelectorAll("ol").forEach((list) => {
         const firstLi = list.querySelector("li");
-        if (!firstLi) {
-          return;
-        }
-        const firstText = getFirstTextNode(firstLi);
-        if (firstText && firstText.textContent) {
-          const indentLevel = getIndentLevel(list);
-          const listStyleType = getListStyleType(indentLevel);
-          list.style.listStyleType = listStyleType;
-          firstText.textContent = firstText.textContent.trim();
+        if (firstLi) {
+          const firstText = getFirstTextNode(firstLi);
+          if (firstText && firstText.textContent) {
+            const indentLevel = getIndentLevel(list);
+            const listStyleType = getListStyleType(indentLevel);
+            list.style.listStyleType = listStyleType;
+            firstText.textContent = firstText.textContent.trim();
+          }
         }
       });
     });

@@ -5,16 +5,14 @@ export default class AutoListStylesPlugin extends Plugin {
     this.registerMarkdownPostProcessor((el) => {
       el.querySelectorAll("ol").forEach((list) => {
         const firstLi = list.querySelector("li");
-        if (!firstLi) {
-          return;  // If no <li> is found, exit early.
-        }
-
-        const firstText = getFirstTextNode(firstLi);  // Now TypeScript knows firstLi is not null
-        if (firstText && firstText.textContent) {
-          const indentLevel = getIndentLevel(list);
-          const listStyleType = getListStyleType(indentLevel);
-          list.style.listStyleType = listStyleType;
-          firstText.textContent = firstText.textContent.trim();
+        if (firstLi) {  // Ensure firstLi is not null before proceeding
+          const firstText = getFirstTextNode(firstLi);
+          if (firstText && firstText.textContent) {
+            const indentLevel = getIndentLevel(list);
+            const listStyleType = getListStyleType(indentLevel);
+            list.style.listStyleType = listStyleType;
+            firstText.textContent = firstText.textContent.trim();
+          }
         }
       });
     });
@@ -22,8 +20,7 @@ export default class AutoListStylesPlugin extends Plugin {
 }
 
 
-
-// Retreive the first text node within a given DOM node. 
+// Retreive the first text node within a given DOM node.
 function getFirstTextNode(node: Node): ChildNode | null {
   if (node == null)
     return null;
