@@ -6,10 +6,10 @@ export default class AutoListStylesPlugin extends Plugin {
       el.querySelectorAll("ol").forEach((list) => {
         const firstLi = list.querySelector("li");
         if (!firstLi) {
-          return;  // Handle the case where no <li> is found.
+          return;  // If no <li> is found, exit early.
         }
 
-        const firstText = getFirstTextNode(firstLi);
+        const firstText = getFirstTextNode(firstLi);  // Now TypeScript knows firstLi is not null
         if (firstText && firstText.textContent) {
           const indentLevel = getIndentLevel(list);
           const listStyleType = getListStyleType(indentLevel);
@@ -20,6 +20,7 @@ export default class AutoListStylesPlugin extends Plugin {
     });
   }
 }
+
 
 
 // Retreive the first text node within a given DOM node. 
